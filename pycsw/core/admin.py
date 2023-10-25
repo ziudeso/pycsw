@@ -60,7 +60,8 @@ def setup_db(database, table, home, create_sfsql_tables=True, create_plpythonu_f
 
     schema_name, table_name = table.rpartition(".")[::2]
 
-    mdata = MetaData(dbase, schema=schema_name or None)
+    # mdata = MetaData(dbase, schema=schema_name or None)
+    mdata = MetaData(dbase, schema=schema_name)
     create_postgis_geometry = False
 
     # If PostGIS 2.x detected, do not create sfsql tables.
