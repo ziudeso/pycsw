@@ -61,6 +61,7 @@ def setup_db(database, table, home, create_sfsql_tables=True, create_plpythonu_f
     schema_name, table_name = table.rpartition(".")[::2]
 
     # mdata = MetaData(dbase, schema=schema_name or None)
+    LOGGER.info('HERE!!!', database)
     mdata = MetaData(dbase, schema=schema_name)
     create_postgis_geometry = False
 
